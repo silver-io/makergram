@@ -11,7 +11,7 @@ describe 'posts' do
 
   context 'posts have been added' do
     before do
-      Post.create(name: 'My cat')
+      Post.create(name: 'A photo of my cat')
     end
 
     it 'should display them' do

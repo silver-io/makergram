@@ -1,2 +1,9 @@
-<h1>Posts pending</h1>
+<% if @posts.any? %>
+    <% @posts.each do |post| %>
+        <h2> <%= post.name %> </h2>
+    <% end %>
+<% else %>
+    Posts pending
+<% end %>
+
 <a href='#'>Add post</a>
