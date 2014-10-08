@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'posts' do
+
   context 'no posts have been added' do
     it 'should display a prompt to add posts' do
       visit '/posts'
@@ -20,6 +21,20 @@ describe 'posts' do
       expect(page).not_to have_content "Posts pending"
     end
   end
+
+  context 'when adding posts' do
+    it 'prompts the user to fill in a form, then displays the post' do
+      visit '/posts'
+      click_link 'Add post'
+      fill_in 'Title', with: 'Hello!'
+      click_link 'Add post'
+      expect(page).to have_content('Hello')
+      expect(page).to have_css('img.uploaded-pic')
+    end
+
+
+  end
+
 
 
 end
