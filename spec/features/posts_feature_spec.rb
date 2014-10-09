@@ -25,7 +25,7 @@ describe 'posts' do
   context 'when adding posts' do
     it 'prompts the user to fill in a form, then displays the post' do
       visit '/posts'
-      click_link 'Add post'
+      # click_link 'Add post'
       fill_in 'Name', with: 'Hello!'
       click_button 'Create post'
       expect(page).to have_content 'Hello!'
