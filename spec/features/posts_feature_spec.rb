@@ -24,10 +24,11 @@ describe 'posts' do
 
   context 'when adding posts' do
     it 'prompts the user to fill in a form, then displays the post' do
-      visit '/posts'
+      visit '/posts/new'
       # click_link 'Add post'
-      fill_in 'Name', with: 'Hello!'
-      click_button 'Create post'
+      # puts page.html
+      fill_in 'post[name]', with: 'Hello!'
+      click_button 'Create Post'
       expect(page).to have_content 'Hello!'
       # expect(page).to have_css('img')
       expect(current_path).to eq '/posts'
