@@ -22,20 +22,20 @@ describe 'posts' do
     end
   end
 
-  # context 'when adding posts' do
-  #   it 'prompts the user to fill in a form, then displays the post' do
-  #     visit '/posts'
-  #     click_link 'Add post'
-  #     fill_in 'Title', with: 'Hello!'
-  #     click_link 'Create post'
-  #     expect(page).to have_content 'Hello!'
-  #     # expect(page).to have_css('img')
-  #     expect(current_path).to eq '/posts'
+  context 'when adding posts' do
+    it 'prompts the user to fill in a form, then displays the post' do
+      visit '/posts'
+      click_link 'Add post'
+      fill_in 'Name', with: 'Hello!'
+      click_button 'Create post'
+      expect(page).to have_content 'Hello!'
+      # expect(page).to have_css('img')
+      expect(current_path).to eq '/posts'
 
-  #   end
+    end
 
 
-  # end
+  end
 
 
 
